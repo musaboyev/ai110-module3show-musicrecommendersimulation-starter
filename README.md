@@ -17,17 +17,25 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+My recommender uses a small taste profile and compares it against the features in `data/songs.csv`. Each song has `genre`, `mood`, `energy`, `valence`, `danceability`, `acousticness`, and `tempo_bpm`. The user profile stores the listener’s preferred genres, preferred mood, and target values for the numeric features.
 
-Some prompts to answer:
+The scoring rule gives the most weight to genre, then mood, then the numeric features. A song gets more points when its genre or mood matches the user profile, and when its numeric values are close to the target values in the user profile. This means the system rewards songs that feel similar to what the user asked for instead of only preferring bigger or smaller numbers.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+The ranking rule is simple: score every song, sort the songs from highest score to lowest score, and return the top `K` songs. That makes the final recommendation list easy to understand and easy to explain.
 
-You can include a simple diagram or bullet list if helpful.
+Final algorithm recipe:
+
+```text
+score =
+0.40 * genre_match
+0.20 * mood_match
+0.15 * energy_closeness
+0.10 * valence_closeness
+0.10 * danceability_closeness
+0.05 * acousticness_closeness
+```
+
+One limitation of this design is that it can over-prioritize genre and mood, which may hide songs that fit the user’s vibe well but come from a different genre. It also depends on the quality of the taste profile, so if the user gives vague answers, the recommendations may be less accurate.
 
 ---
 
@@ -75,6 +83,12 @@ Use this section to document the experiments you ran. For example:
 - How did your system behave for different types of users
 
 ---
+## CLI Verification
+
+I ran `python -m src.main` and confirmed the recommender prints a ranked list of songs.
+
+![CLI output](screenshot.png)
+
 
 ## Limitations and Risks
 
@@ -208,4 +222,3 @@ A few sentences about what you learned:
 - What surprised you about how your system behaved
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
-
