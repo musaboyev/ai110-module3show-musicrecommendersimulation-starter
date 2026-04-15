@@ -1,16 +1,116 @@
-id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Blinding Lights,The Weeknd,synthwave,energetic,0.84,171,0.51,0.82,0.09
-2,Flowers,Miley Cyrus,pop,happy,0.67,118,0.78,0.74,0.16
-3,Gold Digger,Kanye West,hip hop,confident,0.79,93,0.63,0.85,0.04
-4,Anti-Hero,Taylor Swift,pop,moody,0.58,97,0.46,0.67,0.12
-5,SICKO MODE,Travis Scott,hip hop,intense,0.91,155,0.42,0.69,0.08
-6,Eventually,Tame Impala,psychedelic pop,dreamy,0.55,120,0.58,0.62,0.33
-7,Passionfruit,Drake,rap,chill,0.47,112,0.49,0.71,0.18
-8,Levitating,Dua Lipa,pop,upbeat,0.86,103,0.87,0.83,0.06
-9,Sunflower,Post Malone,indie pop,relaxed,0.61,90,0.69,0.77,0.14
-10,Good 4 U,Olivia Rodrigo,alt pop,angry,0.88,166,0.44,0.81,0.05
-11,As It Was,Harry Styles,pop,bright,0.72,174,0.76,0.79,0.08
-12,HUMBLE.,Kendrick Lamar,hip hop,confident,0.83,150,0.55,0.84,0.03
-13,The Less I Know The Better,Tame Impala,psychedelic pop,moody,0.63,102,0.47,0.71,0.24
-14,Someone Like You,Adele,ballad,sad,0.32,67,0.38,0.44,0.52
-15,Industry Baby,Lil Nas X,rap,intense,0.89,150,0.64,0.86,0.04
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness,popularity,release_decade,mood_tag,instrumentation,dancefloor
+1,Blinding Lights,The Weeknd,synthwave,energetic,0.84,171,0.51,0.82,0.09,92,2010,euphoric,electronic,high
+2,Flowers,Miley Cyrus,pop,happy,0.67,118,0.78,0.74,0.16,85,2020,euphoric,electronic,medium
+3,Gold Digger,Kanye West,hip hop,confident,0.79,93,0.63,0.85,0.04,85,2020,aggressive,electronic,medium
+4,Anti-Hero,Taylor Swift,pop,moody,0.58,97,0.46,0.67,0.12,92,2020,melancholic,electronic,low
+5,SICKO MODE,Travis Scott,hip hop,intense,0.91,155,0.42,0.69,0.08,85,2010,aggressive,electronic,medium
+6,Eventually,Tame Impala,psychedelic pop,dreamy,0.55,120,0.58,0.62,0.33,80,2020,nostalgic,hybrid,low
+7,Passionfruit,Drake,rap,chill,0.47,112,0.49,0.71,0.18,92,2010,serene,electronic,low
+8,Levitating,Dua Lipa,pop,upbeat,0.86,103,0.87,0.83,0.06,92,2010,euphoric,electronic,medium
+9,Sunflower,Post Malone,indie pop,relaxed,0.61,90,0.69,0.77,0.14,92,2020,serene,hybrid,medium
+10,Good 4 U,Olivia Rodrigo,alt pop,angry,0.88,166,0.44,0.81,0.05,92,2010,aggressive,band,high
+11,As It Was,Harry Styles,pop,bright,0.72,174,0.76,0.79,0.08,85,2020,euphoric,electronic,medium
+12,HUMBLE.,Kendrick Lamar,hip hop,confident,0.83,150,0.55,0.84,0.03,92,2020,aggressive,electronic,high
+13,The Less I Know The Better,Tame Impala,psychedelic pop,moody,0.63,102,0.47,0.71,0.24,80,2020,melancholic,hybrid,medium
+14,Someone Like You,Adele,ballad,sad,0.32,67,0.38,0.44,0.52,92,2000,melancholic,hybrid,low
+15,Industry Baby,Lil Nas X,rap,intense,0.89,150,0.64,0.86,0.04,85,2020,aggressive,electronic,high
+16,Uptown Funk,Mark Ronson,funk,energetic,0.87,115,0.79,0.91,0.08,80,2000,euphoric,band,high
+17,Shape of You,Ed Sheeran,pop,romantic,0.72,96,0.83,0.83,0.20,92,2020,warm,electronic,medium
+18,Bad Guy,Billie Eilish,alt pop,moody,0.63,135,0.46,0.76,0.11,92,2020,melancholic,band,medium
+19,Happy,Pharrell Williams,pop,happy,0.78,160,0.97,0.84,0.05,85,2000,euphoric,electronic,medium
+20,Rolling in the Deep,Adele,pop,intense,0.82,105,0.62,0.69,0.13,92,2000,aggressive,electronic,medium
+21,Can’t Stop the Feeling,Justin Timberlake,pop,upbeat,0.75,113,0.94,0.88,0.06,85,2020,euphoric,electronic,medium
+22,Watermelon Sugar,Harry Styles,pop,bright,0.69,95,0.88,0.81,0.12,85,2020,euphoric,electronic,medium
+23,Believer,Imagine Dragons,rock,angry,0.88,125,0.41,0.74,0.09,85,2020,aggressive,band,medium
+24,Senorita,Shawn Mendes,pop,romantic,0.66,117,0.80,0.79,0.14,85,2020,warm,electronic,medium
+25,Stay,The Kid LAROI,pop,heartbroken,0.77,170,0.49,0.82,0.04,85,2020,melancholic,electronic,medium
+26,Die For You,The Weeknd,rnb,moody,0.58,116,0.42,0.71,0.16,92,2010,melancholic,electronic,low
+27,Levitating Remix,Dua Lipa,pop,upbeat,0.88,103,0.86,0.84,0.05,84,2010,euphoric,electronic,medium
+28,Savage Love,Jason Derulo,pop,playful,0.74,150,0.89,0.86,0.07,85,2020,euphoric,electronic,medium
+29,Dynamite,BTS,pop,happy,0.77,114,0.95,0.88,0.05,92,2020,euphoric,electronic,medium
+30,Havana,Camila Cabello,pop,flirty,0.71,105,0.84,0.78,0.12,85,2020,warm,electronic,medium
+31,Peaches,Justin Bieber,rnb,chill,0.53,90,0.66,0.74,0.22,85,2020,serene,electronic,low
+32,As It Was Acoustic,Harry Styles,acoustic,calm,0.44,88,0.72,0.58,0.68,45,2020,serene,acoustic,low
+33,Sunflower Spider Man,Post Malone,hip hop,relaxed,0.60,90,0.70,0.77,0.14,92,2020,serene,electronic,medium
+34,Blinding Lights Remix,The Weeknd,synthwave,energetic,0.86,171,0.50,0.83,0.07,84,2010,euphoric,electronic,high
+35,Doja,Central Cee,rap,confident,0.80,140,0.58,0.83,0.03,85,2020,aggressive,electronic,high
+36,Heat Waves,Glass Animals,indie pop,nostalgic,0.64,81,0.56,0.72,0.18,85,2020,nostalgic,hybrid,medium
+37,Drivers License,Olivia Rodrigo,ballad,sad,0.39,69,0.35,0.48,0.51,92,2010,melancholic,hybrid,low
+38,good 4 u live,Olivia Rodrigo,alt pop,angry,0.90,166,0.43,0.82,0.04,84,2010,aggressive,band,high
+39,The Box,Roddy Ricch,rap,intense,0.83,114,0.36,0.80,0.05,85,2020,aggressive,electronic,high
+40,Gods Plan,Drake,rap,chill,0.61,77,0.53,0.75,0.18,92,2010,serene,electronic,medium
+41,One Dance,Drake,afrobeats,laidback,0.55,104,0.69,0.79,0.11,92,2010,serene,hybrid,low
+42,Someone You Loved,Lewis Capaldi,ballad,sad,0.31,110,0.29,0.46,0.60,80,2020,melancholic,hybrid,low
+43,All of Me,John Legend,soul,romantic,0.28,63,0.42,0.43,0.74,80,2000,warm,acoustic,low
+44,Thinking Out Loud,Ed Sheeran,acoustic,romantic,0.43,79,0.79,0.62,0.59,92,2020,warm,hybrid,low
+45,Old Town Road,Lil Nas X,country rap,fun,0.76,136,0.78,0.86,0.09,80,2020,fun,hybrid,medium
+46,Lose Yourself,Eminem,rap,intense,0.88,171,0.31,0.84,0.02,85,2000,aggressive,electronic,high
+47,Stan,Eminem,rap,moody,0.48,80,0.27,0.71,0.12,85,2000,melancholic,electronic,low
+48,Starboy,The Weeknd,alternative rnb,cool,0.79,186,0.43,0.78,0.05,92,2010,cool,hybrid,medium
+49,Can't Feel My Face,The Weeknd,pop,happy,0.73,108,0.78,0.80,0.07,92,2010,euphoric,electronic,medium
+50,Take On Me,a-ha,synthpop,bright,0.71,169,0.83,0.78,0.06,85,1980,euphoric,hybrid,medium
+51,Billie Jean,Michael Jackson,pop,confident,0.68,117,0.74,0.82,0.08,85,1990,aggressive,electronic,medium
+52,Thriller,Michael Jackson,pop,playful,0.75,118,0.76,0.84,0.09,85,1990,euphoric,electronic,medium
+53,Shake It Off,Taylor Swift,pop,happy,0.76,160,0.88,0.85,0.05,92,2020,euphoric,electronic,medium
+54,Blank Space,Taylor Swift,pop,moody,0.62,96,0.45,0.68,0.12,92,2020,melancholic,electronic,medium
+55,Cruel Summer,Taylor Swift,pop,energetic,0.81,170,0.73,0.83,0.06,92,2020,euphoric,electronic,high
+56,Midnight Rain,Taylor Swift,pop,dreamy,0.48,97,0.34,0.55,0.20,92,2020,nostalgic,electronic,low
+57,Karma,Taylor Swift,pop,playful,0.73,120,0.89,0.79,0.07,92,2020,euphoric,electronic,medium
+58,Anti Hero Remix,Taylor Swift,pop,moody,0.60,97,0.44,0.66,0.10,84,2020,melancholic,electronic,medium
+59,Afterglow,Taylor Swift,ballad,romantic,0.35,68,0.40,0.42,0.49,92,2020,warm,hybrid,low
+60,Wildest Dreams,Taylor Swift,indie pop,dreamy,0.56,120,0.62,0.67,0.19,92,2020,nostalgic,hybrid,low
+61,SOS,Rihanna,pop,urgent,0.83,119,0.48,0.79,0.06,92,2000,aggressive,electronic,medium
+62,Diamonds,Rihanna,pop,calm,0.52,92,0.71,0.60,0.34,92,2000,serene,electronic,low
+63,Umbrella,Rihanna,rnb,confident,0.74,87,0.57,0.77,0.15,92,2000,aggressive,electronic,medium
+64,Work,Rihanna,afrobeats,laidback,0.69,91,0.62,0.81,0.10,92,2000,serene,hybrid,medium
+65,We Found Love,Rihanna,dance pop,energetic,0.88,127,0.85,0.89,0.04,92,2000,euphoric,electronic,high
+66,Only Girl,Rihanna,pop,bright,0.84,126,0.87,0.86,0.05,92,2000,euphoric,electronic,high
+67,Hotline Bling,Drake,rap,chill,0.54,135,0.58,0.76,0.19,92,2010,serene,electronic,low
+68,Passionfruit Remix,Drake,rap,chill,0.49,112,0.50,0.72,0.18,84,2010,serene,electronic,low
+69,Nice For What,Drake,pop,confident,0.79,93,0.76,0.83,0.08,92,2010,aggressive,electronic,medium
+70,Laugh Now Cry Later,Drake,rap,moody,0.68,112,0.47,0.78,0.12,92,2010,melancholic,electronic,medium
+71,Goosebumps,Travis Scott,hip hop,moody,0.77,130,0.39,0.74,0.09,85,2010,melancholic,electronic,medium
+72,Highest in the Room,Travis Scott,hip hop,dreamy,0.72,176,0.41,0.73,0.08,85,2010,nostalgic,electronic,medium
+73,Butter,BTS,pop,happy,0.80,110,0.93,0.87,0.05,92,2020,euphoric,electronic,high
+74,Permission to Dance,BTS,pop,joyful,0.74,124,0.95,0.86,0.06,92,2020,euphoric,electronic,medium
+75,Bad Habits,Ed Sheeran,pop,energetic,0.78,126,0.66,0.82,0.08,92,2020,euphoric,electronic,medium
+76,Perfect,Ed Sheeran,ballad,romantic,0.39,63,0.82,0.49,0.63,92,2020,warm,hybrid,low
+77,Castle on the Hill,Ed Sheeran,pop,nostalgic,0.70,135,0.74,0.76,0.14,92,2020,nostalgic,electronic,medium
+78,Photograph,Ed Sheeran,acoustic,sad,0.34,73,0.56,0.41,0.72,92,2020,melancholic,acoustic,low
+79,Easy On Me,Adele,ballad,sad,0.26,68,0.32,0.38,0.69,92,2000,melancholic,acoustic,low
+80,Set Fire to the Rain,Adele,pop,intense,0.66,108,0.58,0.66,0.28,92,2000,aggressive,electronic,medium
+81,Hello,Adele,ballad,sad,0.40,79,0.31,0.46,0.58,92,2000,melancholic,hybrid,low
+82,Love Story,Taylor Swift,pop,romantic,0.70,120,0.81,0.80,0.09,92,2020,warm,electronic,medium
+83,Blank Space Live,Taylor Swift,pop,moody,0.63,96,0.43,0.67,0.12,84,2020,melancholic,electronic,medium
+84,Happier Than Ever,Billie Eilish,alt pop,angry,0.73,81,0.29,0.58,0.24,92,2020,aggressive,band,low
+85,Bury a Friend,Billie Eilish,alt pop,moody,0.56,125,0.19,0.63,0.21,92,2020,melancholic,band,low
+86,When We All Fall Asleep,Billie Eilish,alt pop,dreamy,0.50,100,0.28,0.61,0.25,92,2020,nostalgic,band,low
+87,Lovely,Billie Eilish,ballad,sad,0.24,60,0.20,0.37,0.78,92,2020,melancholic,acoustic,low
+88,Ocean Eyes,Billie Eilish,ballad,calm,0.29,80,0.42,0.41,0.73,92,2020,serene,acoustic,low
+89,Therefore I Am,Billie Eilish,pop,playful,0.69,94,0.53,0.79,0.10,92,2020,euphoric,electronic,medium
+90,Drivers License Acoustic,Olivia Rodrigo,acoustic,sad,0.33,68,0.34,0.42,0.70,82,2010,melancholic,acoustic,low
+91,Sunflower Acoustic,Post Malone,acoustic,relaxed,0.38,88,0.61,0.48,0.75,82,2020,serene,acoustic,low
+92,Good Days,SZA,rnb,chill,0.46,80,0.67,0.61,0.33,85,2010,serene,electronic,low
+93,Kill Bill,SZA,rnb,moody,0.64,88,0.48,0.72,0.20,85,2010,melancholic,electronic,medium
+94,Snooze,SZA,rnb,romantic,0.55,92,0.72,0.70,0.29,85,2010,warm,electronic,low
+95,Self Control,Frank Ocean,rnb,moody,0.41,70,0.47,0.54,0.64,85,2010,melancholic,electronic,low
+96,Blonde,Frank Ocean,rnb,dreamy,0.43,74,0.50,0.57,0.60,85,2010,nostalgic,electronic,low
+97,Super Rich Kids,Frank Ocean,rnb,playful,0.58,96,0.61,0.68,0.22,85,2010,euphoric,electronic,low
+98,Get Lucky,Daft Punk,disco,upbeat,0.81,116,0.88,0.89,0.07,80,2000,euphoric,band,high
+99,One More Time,Daft Punk,house,happy,0.84,123,0.92,0.90,0.03,80,2000,euphoric,electronic,high
+100,Something Just Like This,The Chainsmokers,pop,bright,0.76,103,0.84,0.82,0.08,85,2010,euphoric,electronic,medium
+101,Closer,The Chainsmokers,pop,nostalgic,0.69,95,0.64,0.77,0.11,85,2010,nostalgic,electronic,medium
+102,Sunset Lover,Petit Biscuit,electronic,chill,0.45,90,0.66,0.55,0.48,80,2020,serene,electronic,low
+103,Cradles,Sub Urban,alt pop,moody,0.67,125,0.31,0.73,0.14,80,2020,melancholic,band,medium
+104,Belong Together,Mark Ambor,pop,romantic,0.51,78,0.78,0.60,0.42,85,2020,warm,electronic,low
+105,Paint The Town Red,Doja Cat,rap,confident,0.79,100,0.59,0.84,0.06,85,2010,aggressive,electronic,medium
+106,Agora Hills,Doja Cat,pop,playful,0.70,120,0.73,0.81,0.08,85,2010,euphoric,electronic,medium
+107,All The Stars,Kendrick Lamar,rnb,dreamy,0.68,96,0.61,0.76,0.13,92,2020,nostalgic,electronic,medium
+108,The Hillbillies,Kendrick Lamar,hip hop,confident,0.82,118,0.56,0.85,0.05,92,2020,aggressive,electronic,high
+109,Vampire,Olivia Rodrigo,pop,angry,0.72,132,0.37,0.74,0.09,92,2010,aggressive,electronic,medium
+110,bad idea right,Olivia Rodrigo,alt pop,playful,0.83,170,0.49,0.85,0.04,92,2010,euphoric,band,high
+111,Stick Season,Noah Kahan,folk,sad,0.42,110,0.33,0.56,0.71,55,2020,melancholic,acoustic,low
+112,The Night We Met,Lord Huron,folk,sad,0.31,76,0.28,0.45,0.79,55,2020,melancholic,acoustic,low
+113,Ophelia,Lord Huron,indie folk,nostalgic,0.56,115,0.67,0.66,0.46,55,2020,nostalgic,hybrid,low
+114,Take Me Home Country Roads,John Denver,country,nostalgic,0.45,88,0.74,0.58,0.65,80,2000,nostalgic,acoustic,low
+115,Hotel California,Eagles,rock,moody,0.58,75,0.52,0.64,0.39,85,2000,melancholic,band,low

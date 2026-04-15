@@ -1,0 +1,127 @@
+Loading songs from data/songs.csv...
+
+=== user_prefs0 (mood_first) ===
+Profile: {'genre': 'pop', 'mood': 'happy', 'energy': 0.8, 'target_popularity': 0.9, 'target_decade': 2020, 'target_mood_tag': 'euphoric', 'preferred_instrumentation': 'electronic', 'target_dancefloor': 'high'}
+
+Top recommendations:
+
+1. Butter - Score: 0.71
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.12), release decade closeness (+0.10), detailed mood tag match (+0.08), instrumentation match (+0.02), dancefloor match (+0.01)
+
+2. Dynamite - Score: 0.69
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.12), release decade closeness (+0.10), detailed mood tag match (+0.08), instrumentation match (+0.02)
+
+3. Shake It Off - Score: 0.69
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.12), release decade closeness (+0.10), detailed mood tag match (+0.08), instrumentation match (+0.02)
+
+4. Flowers - Score: 0.68
+Because: mood match (+0.24), energy closeness (+0.12), popularity closeness (+0.11), release decade closeness (+0.10), detailed mood tag match (+0.08), instrumentation match (+0.02)
+
+5. Can't Feel My Face - Score: 0.66
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.12), release decade closeness (+0.08), detailed mood tag match (+0.08), instrumentation match (+0.02)
+
+
+=== user_prefs1 (mood_first) ===
+Profile: {'genre': 'lofi', 'mood': 'chill', 'energy': 0.35, 'target_popularity': 0.55, 'target_decade': 2020, 'target_mood_tag': 'serene', 'preferred_instrumentation': 'acoustic', 'target_dancefloor': 'low'}
+
+Top recommendations:
+
+1. Sunset Lover - Score: 0.65
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.09), release decade closeness (+0.10), detailed mood tag match (+0.08), dancefloor match (+0.01)
+
+2. Peaches - Score: 0.63
+Because: mood match (+0.24), energy closeness (+0.11), popularity closeness (+0.08), release decade closeness (+0.10), detailed mood tag match (+0.08), dancefloor match (+0.01)
+
+3. Good Days - Score: 0.61
+Because: mood match (+0.24), energy closeness (+0.12), popularity closeness (+0.08), release decade closeness (+0.08), detailed mood tag match (+0.08), dancefloor match (+0.01)
+
+4. Passionfruit Remix - Score: 0.61
+Because: mood match (+0.24), energy closeness (+0.12), popularity closeness (+0.09), release decade closeness (+0.08), detailed mood tag match (+0.08), dancefloor match (+0.01)
+
+5. Passionfruit - Score: 0.60
+Because: mood match (+0.24), energy closeness (+0.12), popularity closeness (+0.08), release decade closeness (+0.08), detailed mood tag match (+0.08), dancefloor match (+0.01)
+
+
+=== user_prefs2 (mood_first) ===
+Profile: {'genre': 'hip hop', 'mood': 'intense', 'energy': 0.9, 'target_popularity': 0.85, 'target_decade': 2010, 'target_mood_tag': 'aggressive', 'preferred_instrumentation': 'electronic', 'target_dancefloor': 'high'}
+
+Top recommendations:
+
+1. SICKO MODE - Score: 0.70
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.12), release decade closeness (+0.10), detailed mood tag match (+0.08), instrumentation match (+0.02)
+
+2. Industry Baby - Score: 0.68
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.12), release decade closeness (+0.08), detailed mood tag match (+0.08), instrumentation match (+0.02), dancefloor match (+0.01)
+
+3. Lose Yourself - Score: 0.68
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.12), release decade closeness (+0.08), detailed mood tag match (+0.08), instrumentation match (+0.02), dancefloor match (+0.01)
+
+4. The Box - Score: 0.68
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.12), release decade closeness (+0.08), detailed mood tag match (+0.08), instrumentation match (+0.02), dancefloor match (+0.01)
+
+5. Rolling in the Deep - Score: 0.66
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.11), release decade closeness (+0.08), detailed mood tag match (+0.08), instrumentation match (+0.02)
+
+
+=== tricky_user_prefs0 (mood_first) ===
+Profile: {'genre': 'pop', 'mood': 'happy', 'energy': 0.15, 'target_popularity': 0.8, 'target_decade': 1980, 'target_mood_tag': 'nostalgic', 'preferred_instrumentation': 'acoustic', 'target_dancefloor': 'low'}
+
+Top recommendations:
+
+1. Happy - Score: 0.46
+Because: mood match (+0.24), energy closeness (+0.05), popularity closeness (+0.11), release decade closeness (+0.05)
+
+2. One More Time - Score: 0.45
+Because: mood match (+0.24), energy closeness (+0.04), popularity closeness (+0.12), release decade closeness (+0.05)
+
+3. Can't Feel My Face - Score: 0.43
+Because: mood match (+0.24), energy closeness (+0.06), popularity closeness (+0.11), release decade closeness (+0.03)
+
+4. Flowers - Score: 0.42
+Because: mood match (+0.24), energy closeness (+0.07), popularity closeness (+0.11), release decade closeness (+0.00)
+
+5. Shake It Off - Score: 0.40
+Because: mood match (+0.24), energy closeness (+0.05), popularity closeness (+0.11), release decade closeness (+0.00)
+
+
+=== tricky_user_prefs1 (mood_first) ===
+Profile: {'genre': 'lofi', 'mood': 'intense', 'energy': 0.9, 'target_popularity': 0.4, 'target_decade': 2000, 'target_mood_tag': 'aggressive', 'preferred_instrumentation': 'band', 'target_dancefloor': 'high'}
+
+Top recommendations:
+
+1. Lose Yourself - Score: 0.63
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.07), release decade closeness (+0.10), detailed mood tag match (+0.08), dancefloor match (+0.01)
+
+2. Rolling in the Deep - Score: 0.61
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.06), release decade closeness (+0.10), detailed mood tag match (+0.08)
+
+3. SICKO MODE - Score: 0.60
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.07), release decade closeness (+0.08), detailed mood tag match (+0.08)
+
+4. Industry Baby - Score: 0.58
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.07), release decade closeness (+0.05), detailed mood tag match (+0.08), dancefloor match (+0.01)
+
+5. Set Fire to the Rain - Score: 0.58
+Because: mood match (+0.24), energy closeness (+0.11), popularity closeness (+0.06), release decade closeness (+0.10), detailed mood tag match (+0.08)
+
+
+=== tricky_user_prefs2 (mood_first) ===
+Profile: {'genre': 'hip hop', 'mood': 'chill', 'energy': 0.5, 'target_popularity': 0.75, 'target_decade': 2010, 'target_mood_tag': 'nostalgic', 'preferred_instrumentation': 'hybrid', 'target_dancefloor': 'medium'}
+
+Top recommendations:
+
+1. Passionfruit Remix - Score: 0.59
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.11), release decade closeness (+0.10)
+
+2. Good Days - Score: 0.58
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.11), release decade closeness (+0.10)
+
+3. Passionfruit - Score: 0.58
+Because: mood match (+0.24), energy closeness (+0.14), popularity closeness (+0.10), release decade closeness (+0.10)
+
+4. Gods Plan - Score: 0.57
+Because: mood match (+0.24), energy closeness (+0.12), popularity closeness (+0.10), release decade closeness (+0.10), dancefloor match (+0.01)
+
+5. Hotline Bling - Score: 0.57
+Because: mood match (+0.24), energy closeness (+0.13), popularity closeness (+0.10), release decade closeness (+0.10)
+

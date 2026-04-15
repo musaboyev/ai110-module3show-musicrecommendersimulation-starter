@@ -89,6 +89,21 @@ I ran `python -m src.main` and confirmed the recommender prints a ranked list of
 
 ![CLI output](screenshot.png)
 
+I also saved the terminal output here: [output.txt](output.txt)
+
+### Saved Outputs
+
+I used text files here instead of screenshots because they were faster to save and easier to compare.
+
+- [Original output](output.txt)
+- [Mood-based output](mood_based_output.txt)
+- [Genre-first output](genre_first_output.txt)
+- [Mood-first output](mood_first_output.txt)
+
+### Challenge Summary
+
+I completed Challenge 1, Challenge 2, and Challenge 4. Challenge 3 is still not fully implemented because I did not add a real diversity penalty for repeated artists or genres.
+
 
 ## Limitations and Risks
 

@@ -1,0 +1,127 @@
+Loading songs from data/songs.csv...
+
+=== user_prefs0 ===
+Profile: {'genre': 'pop', 'mood': 'happy', 'energy': 0.8}
+
+Top recommendations:
+
+1. Butter - Score: 0.55
+Because: mood match (+0.30), energy closeness (+0.25)
+
+2. Happy - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+3. Dynamite - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+4. Shake It Off - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+5. One More Time - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+
+=== user_prefs1 ===
+Profile: {'genre': 'lofi', 'mood': 'chill', 'energy': 0.35}
+
+Top recommendations:
+
+1. Sunset Lover - Score: 0.52
+Because: mood match (+0.30), energy closeness (+0.22)
+
+2. Good Days - Score: 0.52
+Because: mood match (+0.30), energy closeness (+0.22)
+
+3. Passionfruit - Score: 0.52
+Because: mood match (+0.30), energy closeness (+0.22)
+
+4. Passionfruit Remix - Score: 0.52
+Because: mood match (+0.30), energy closeness (+0.21)
+
+5. Peaches - Score: 0.51
+Because: mood match (+0.30), energy closeness (+0.20)
+
+
+=== user_prefs2 ===
+Profile: {'genre': 'hip hop', 'mood': 'intense', 'energy': 0.9}
+
+Top recommendations:
+
+1. SICKO MODE - Score: 0.55
+Because: mood match (+0.30), energy closeness (+0.25)
+
+2. Industry Baby - Score: 0.55
+Because: mood match (+0.30), energy closeness (+0.25)
+
+3. Lose Yourself - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+4. The Box - Score: 0.53
+Because: mood match (+0.30), energy closeness (+0.23)
+
+5. Rolling in the Deep - Score: 0.53
+Because: mood match (+0.30), energy closeness (+0.23)
+
+
+=== tricky_user_prefs0 ===
+Profile: {'genre': 'pop', 'mood': 'happy', 'energy': 0.15}
+
+Top recommendations:
+
+1. Flowers - Score: 0.42
+Because: mood match (+0.30), energy closeness (+0.12)
+
+2. Can't Feel My Face - Score: 0.41
+Because: mood match (+0.30), energy closeness (+0.11)
+
+3. Shake It Off - Score: 0.40
+Because: mood match (+0.30), energy closeness (+0.10)
+
+4. Dynamite - Score: 0.40
+Because: mood match (+0.30), energy closeness (+0.10)
+
+5. Happy - Score: 0.39
+Because: mood match (+0.30), energy closeness (+0.09)
+
+
+=== tricky_user_prefs1 ===
+Profile: {'genre': 'lofi', 'mood': 'intense', 'energy': 0.9}
+
+Top recommendations:
+
+1. SICKO MODE - Score: 0.55
+Because: mood match (+0.30), energy closeness (+0.25)
+
+2. Industry Baby - Score: 0.55
+Because: mood match (+0.30), energy closeness (+0.25)
+
+3. Lose Yourself - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+4. The Box - Score: 0.53
+Because: mood match (+0.30), energy closeness (+0.23)
+
+5. Rolling in the Deep - Score: 0.53
+Because: mood match (+0.30), energy closeness (+0.23)
+
+
+=== tricky_user_prefs2 ===
+Profile: {'genre': 'hip hop', 'mood': 'chill', 'energy': 0.5}
+
+Top recommendations:
+
+1. Passionfruit Remix - Score: 0.55
+Because: mood match (+0.30), energy closeness (+0.25)
+
+2. Passionfruit - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+3. Peaches - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+4. Hotline Bling - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
+5. Good Days - Score: 0.54
+Because: mood match (+0.30), energy closeness (+0.24)
+
