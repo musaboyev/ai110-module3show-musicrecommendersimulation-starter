@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple, Optional, Set
 from dataclasses import dataclass
 
 @dataclass
@@ -105,6 +105,25 @@ def load_songs(csv_path: str) -> List[Dict]:
 
     return songs
 
+def load_song_notes(csv_path: str) -> List[Dict]:
+    """Load supplemental editorial notes used as a second retrieval source."""
+    import csv
+
+    notes: List[Dict] = []
+    with open(csv_path, newline="", encoding="utf-8") as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            notes.append(
+                {
+                    "id": int(row["id"]),
+                    "source": row["source"],
+                    "note_tags": [tag.strip() for tag in row["note_tags"].split(",") if tag.strip()],
+                    "note_text": row["note_text"],
+                }
+            )
+
+    return notes
+
 def score_song(user_prefs: Dict, song: Dict, mode: str = "genre_first") -> Tuple[float, List[str]]:
     """Score one song against the user's preferences and return reasons."""
     score = 0.0
@@ -208,10 +227,81 @@ def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tup
     mode = user_prefs.get("mode", "genre_first")
     scored_songs: List[Tuple[Dict, float, str]] = []
 
-    for song in songs:
+    candidates = retrieve_candidates(user_prefs, songs)
+    for song in candidates:
         score, reasons = score_song(user_prefs, song, mode=mode)
         explanation = ", ".join(reasons)
         scored_songs.append((song, score, explanation))
 
     scored_songs.sort(key=lambda item: item[1], reverse=True)
+    
+    if not scored_songs:
+      print("⚠️ No matches found — using fallback")
+      return [(songs[i], 0.0, "fallback recommendation") for i in range(5)]
+    
     return scored_songs[:k]
+
+
+def retrieve_candidates(user_prefs, songs):
+    notes = load_song_notes("data/song_notes.csv")
+    note_matches = retrieve_candidates_from_notes(user_prefs, songs, notes)
+    metadata_matches = retrieve_candidates_from_metadata(user_prefs, songs)
+
+    combined_ids: Set[int] = set()
+    filtered = []
+
+    for song in metadata_matches + note_matches:
+        song_id = song["id"]
+        if song_id in combined_ids:
+            continue
+        combined_ids.add(song_id)
+        filtered.append(song)
+
+    # fallback = important for reliability
+    if len(filtered) < 5:
+        return songs
+
+    return filtered
+
+def retrieve_candidates_from_metadata(user_prefs, songs):
+    filtered = []
+
+    for song in songs:
+        # HARD filters (retrieval stage)
+        if user_prefs.get("genre") and song["genre"] != user_prefs["genre"]:
+            continue
+
+        if user_prefs.get("target_mood_tag") and song["mood_tag"] != user_prefs["target_mood_tag"]:
+            continue
+
+        if user_prefs.get("target_dancefloor") and song["dancefloor"] != user_prefs["target_dancefloor"]:
+            continue
+
+        filtered.append(song)
+
+    return filtered
+
+def retrieve_candidates_from_notes(user_prefs, songs, notes):
+    song_by_id = {song["id"]: song for song in songs}
+    matched_songs = []
+
+    preferred_tags = []
+    if user_prefs.get("target_mood_tag"):
+        preferred_tags.append(user_prefs["target_mood_tag"])
+    if user_prefs.get("target_dancefloor"):
+        preferred_tags.append(user_prefs["target_dancefloor"])
+    if user_prefs.get("genre"):
+        preferred_tags.append(user_prefs["genre"])
+
+    for note in notes:
+        note_tags = set(note.get("note_tags", []))
+        if preferred_tags and not any(tag in note_tags for tag in preferred_tags):
+            continue
+
+        song = song_by_id.get(note["id"])
+        if song is None:
+            continue
+
+        matched_songs.append(song)
+
+    return matched_songs

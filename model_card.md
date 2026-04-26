@@ -22,6 +22,8 @@ The catalog has 115 songs. I added popular songs from pop, hip hop, rock, rnb, r
 
 The recommender gives points for songs that match the user’s genre and mood. It also gives points when a song’s energy, valence, danceability, and acousticness are close to the user’s target values. After every song gets a score, the system sorts the list from highest to lowest. The top songs are the final recommendations.
 
+Before scoring, the system applies custom multi-attribute retrieval over the structured catalog by filtering on fields such as `genre`, `mood_tag`, and `dancefloor`. That reduces the candidate set and makes the ranking step more focused.
+
 ---
 
 ## 5. Observed Behavior / Biases

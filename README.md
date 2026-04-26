@@ -2,16 +2,9 @@
 
 ## Project Summary
 
-In this project you will build and explain a small music recommender system.
+This project builds a small music recommender system that ranks songs from a structured CSV catalog. It compares a user taste profile against song features such as genre, mood, energy, valence, danceability, acousticness, and additional tags.
 
-Your goal is to:
-
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
-
-Replace this paragraph with your own summary of what your version does.
+The original project scope is a rule-based recommender that scores every song and returns the top results. My version extends that baseline with custom multi-attribute retrieval, an evaluation script, and fallback guardrails so the system is easier to explain and more reliable.
 
 ---
 
@@ -22,6 +15,39 @@ My recommender uses a small taste profile and compares it against the features i
 The scoring rule gives the most weight to genre, then mood, then the numeric features. A song gets more points when its genre or mood matches the user profile, and when its numeric values are close to the target values in the user profile. This means the system rewards songs that feel similar to what the user asked for instead of only preferring bigger or smaller numbers.
 
 The ranking rule is simple: score every song, sort the songs from highest score to lowest score, and return the top `K` songs. That makes the final recommendation list easy to understand and easy to explain.
+
+I also added custom multi-source retrieval over the structured song dataset and a second editorial notes file. Before scoring, the recommender filters candidates by fields like `genre`, `mood_tag`, and `dancefloor`, and it also checks matching tags in `data/song_notes.csv` to widen retrieval beyond a single source.
+
+## New AI Feature
+
+I introduced a retrieval stage that filters relevant songs before scoring, simulating a Retrieval-Augmented Generation style pipeline without using an LLM. This is implemented in `src/recommender.py` through `retrieve_candidates()`, which combines the main catalog with a second editorial notes source before the ranking step.
+
+## Evaluation
+
+I built an evaluation script that tests the recommender across multiple user profiles and computes average recommendation scores. This gives a simple but repeatable way to compare behavior across different preferences and mode settings.
+
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    A[User profile or CLI input] --> B[Load songs from data/songs.csv]
+    A --> C[Load editorial notes from data/song_notes.csv]
+    B --> D[Metadata retrieval: filter by genre, mood_tag, dancefloor]
+    C --> E[Notes retrieval: match note tags to preferences]
+    D --> F[Combine unique candidates]
+    E --> F
+    F --> G[Scoring: score_song()]
+    G --> H[Rank songs and select top K]
+    H --> I[CLI output or saved results]
+    H --> J[evaluate.py sample profiles]
+    J --> K[Average score summary]
+```
+
+Rendered diagram:
+
+![Architecture diagram](assets/mermaid.png)
+
+If Mermaid rendering is not available in your submission viewer, you can also keep the existing CLI screenshot below as proof of the working system.
 
 Final algorithm recipe:
 
@@ -49,18 +75,19 @@ One limitation of this design is that it can over-prioritize genre and mood, whi
    python -m venv .venv
    source .venv/bin/activate      # Mac or Linux
    .venv\Scripts\activate         # Windows
+   ```
 
 2. Install dependencies
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. Run the app:
 
-```bash
-python -m src.main
-```
+   ```bash
+   python -m src.main
+   ```
 
 ### Running Tests
 
@@ -76,20 +103,20 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
-
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+I tried different scoring modes and compared how the ranking changed for several user profiles. I also tested the retrieval stage by using multiple preference fields, which made the final recommendation list more focused for some profiles and more restrictive for others.
 
 ---
 ## CLI Verification
 
 I ran `python -m src.main` and confirmed the recommender prints a ranked list of songs.
 
-![CLI output](screenshot.png)
+![CLI output](assets/screenshot.png)
 
 I also saved the terminal output here: [output.txt](output.txt)
+
+## Demo Walkthrough
+
+Loom video walkthrough: https://www.loom.com/share/0ff3d9fabb67411189398f8315e9af9e
 
 ### Saved Outputs
 
@@ -107,13 +134,7 @@ I completed Challenge 1, Challenge 2, and Challenge 4. Challenge 3 is still not 
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
-
-Examples:
-
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
+The recommender only works on a small structured catalog, so it does not understand lyrics, artist context, or real semantic similarity. It can also over-favor certain genres or moods when the user profile is specific, and the fallback behavior may surface songs that are only loosely related to the request.
 
 You will go deeper on this in your model card.
 
@@ -121,12 +142,8 @@ You will go deeper on this in your model card.
 
 ## Reflection
 
-Read and complete `model_card.md`:
-
 [**Model Card**](model_card.md)
 
-Write 1 to 2 paragraphs here about what you learned:
+I learned that even a simple recommender can behave quite differently depending on feature weights and retrieval rules. Small changes to the scoring logic can shift the ranking a lot, which made it clear why recommendation systems need careful evaluation.
 
-- about how recommenders turn data into predictions
-- about where bias or unfairness could show up in systems like this
-
+I also saw how bias can enter through the dataset and the feature design. If the catalog is small or skewed toward mainstream music, the recommender can narrow results too much and miss songs that fit the user's taste in a less obvious way.
