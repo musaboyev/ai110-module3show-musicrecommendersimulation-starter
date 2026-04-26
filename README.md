@@ -28,26 +28,10 @@ I built an evaluation script that tests the recommender across multiple user pro
 
 ## Architecture Diagram
 
-```mermaid
-flowchart TD
-    A[User profile or CLI input] --> B[Load songs from data/songs.csv]
-    A --> C[Load editorial notes from data/song_notes.csv]
-    B --> D[Metadata retrieval: filter by genre, mood_tag, dancefloor]
-    C --> E[Notes retrieval: match note tags to preferences]
-    D --> F[Combine unique candidates]
-    E --> F
-    F --> G[Scoring: score_song()]
-    G --> H[Rank songs and select top K]
-    H --> I[CLI output or saved results]
-    H --> J[evaluate.py sample profiles]
-    J --> K[Average score summary]
-```
-
-Rendered diagram:
 
 ![Architecture diagram](assets/mermaid.png)
 
-If Mermaid rendering is not available in your submission viewer, you can also keep the existing CLI screenshot below as proof of the working system.
+
 
 Final algorithm recipe:
 
@@ -65,43 +49,9 @@ One limitation of this design is that it can over-prioritize genre and mood, whi
 
 ---
 
-## Getting Started
 
-### Setup
 
-1. Create a virtual environment (optional but recommended):
-
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate      # Mac or Linux
-   .venv\Scripts\activate         # Windows
-   ```
-
-2. Install dependencies
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Run the app:
-
-   ```bash
-   python -m src.main
-   ```
-
-### Running Tests
-
-Run the starter tests with:
-
-```bash
-pytest
-```
-
-You can add more tests in `tests/test_recommender.py`.
-
----
-
-## Experiments You Tried
+## Experiments
 
 I tried different scoring modes and compared how the ranking changed for several user profiles. I also tested the retrieval stage by using multiple preference fields, which made the final recommendation list more focused for some profiles and more restrictive for others.
 
@@ -136,7 +86,7 @@ I completed Challenge 1, Challenge 2, and Challenge 4. Challenge 3 is still not 
 
 The recommender only works on a small structured catalog, so it does not understand lyrics, artist context, or real semantic similarity. It can also over-favor certain genres or moods when the user profile is specific, and the fallback behavior may surface songs that are only loosely related to the request.
 
-You will go deeper on this in your model card.
+
 
 ---
 
